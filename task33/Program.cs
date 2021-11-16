@@ -2,13 +2,40 @@
 
 
 
-void PrintArray()
+// void PrintArray()
+// {
+//     int[]array=new int[8];
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//      array[i]=new Random().Next(0,2);
+//      System.Console.WriteLine(array[i]);   
+//     }
+// }
+// PrintArray();
+
+
+
+int[] array=new int [8];
+int [] FillArray(int [] A)
 {
-    int[]array=new int[8];
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < A.Length; i++)
     {
-     array[i]=new Random().Next(0,2);
-     System.Console.WriteLine(array[i]);   
+        A[i]=new Random().Next(0,2);
     }
+    return A;
 }
-PrintArray();
+
+
+string PrintArray(int [] B)
+{
+    string result = string.Empty;
+    for (int i = 0; i < B.Length; i++)
+    {
+       result += $"{B[i]} ";
+    }
+    return result;
+}
+
+FillArray(array);
+string print=PrintArray(array);
+System.Console.WriteLine(print);
