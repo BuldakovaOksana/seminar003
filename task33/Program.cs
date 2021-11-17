@@ -36,6 +36,7 @@ string PrintArray(int [] B)
     return result;
 }
 
+
 FillArray(array);
 string print=PrintArray(array);
 System.Console.WriteLine(print);
