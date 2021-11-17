@@ -2,10 +2,13 @@
 
 
 
-
-int[] array=new int [8];
+void PrintArray()
+{
+int[] array = new int[8];
 for (int i = 0; i < array.Length; i++)
 {
-    array[i]=new Random().Next(1,20);
+    array[i] = new Random().Next(1, 20);
     System.Console.WriteLine(array[i]);
 }
+}
+PrintArray();
