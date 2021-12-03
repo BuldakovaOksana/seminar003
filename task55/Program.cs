@@ -30,7 +30,7 @@ void PrintArray(int [,] array)
 int[,] FillArray=GetArray(5,5,1,10);
 PrintArray(FillArray);
 
-int SumDiagonals(int[,] array)
+int GetSumDiagonals(int[,] array)
 {
     int sum=0;
     for (int i = 0; i < array.GetLength(0); i++)
@@ -39,4 +39,4 @@ int SumDiagonals(int[,] array)
     }
     return sum;
 }
-System.Console.WriteLine(SumDiagonals(FillArray));
+System.Console.WriteLine(GetSumDiagonals(FillArray));

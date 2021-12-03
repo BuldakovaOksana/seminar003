@@ -1,4 +1,6 @@
-﻿// Дан целочисленный массив. Найти среднее арифметическое каждого из столбцов.
+﻿// Написать программу, которая обменивает элементы первой строки и последней строки
+
+
 
 
 int[,] FillArray(int row, int column, int leftBound, int rightBound)
@@ -15,6 +17,7 @@ int[,] FillArray(int row, int column, int leftBound, int rightBound)
 }
 
 
+
 void PrintArray(int[,] array)
 {
     for (int i = 0; i < array.GetLength(0); i++)
@@ -27,24 +30,25 @@ void PrintArray(int[,] array)
     }
 }
 
-int[,] getArray = FillArray(4, 4, 1, 10);
-PrintArray(getArray);
 
-void ArithmeticMeanColumn(int[,] array)
+int[,] GetArray = FillArray(4, 4, 1, 10);
+PrintArray(GetArray);
+
+
+int[,] ExchangeFirstrowLastrow(int[,] array)
 {
-    double[] arr = new double[array.GetLength(1)];
 
+    int i = 0;
     for (int j = 0; j < array.GetLength(1); j++)
     {
-        double sum = 0;
-        for (int i = 0; i < array.GetLength(0); i++)
-        {
-            sum += array[i, j];
-
-        }
-
-        System.Console.Write($"{arr[j] = sum / array.GetLength(0)} ");
+        int tamp = array[i, j];
+        array[i, j] = array[array.GetLength(0) - 1, j];
+        array[array.GetLength(0) - 1, j] = tamp;
     }
 
+
+    return array;
 }
-ArithmeticMeanColumn(getArray);
+int[,] Exchange = ExchangeFirstrowLastrow(GetArray);
+System.Console.WriteLine();
+PrintArray(Exchange);
